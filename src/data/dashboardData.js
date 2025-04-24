@@ -1,4 +1,3 @@
-// Sample data - organized by time range
 export const timeRangeData = {
   "24h": [
     { name: "12am", users: 1200, revenue: 580, engagement: 700 },
@@ -124,7 +123,6 @@ export const deviceData = {
   ],
 };
 
-// Define acquisition data by time range
 export const acquisitionData = {
   "24h": [
     { name: "Direct", value: 240 },
@@ -283,7 +281,6 @@ export const topPerformingData = {
   ],
 };
 
-// Define audience demographics data
 export const audienceDemographics = {
   "24h": [
     { name: "18-24", value: 280 },
@@ -315,7 +312,6 @@ export const audienceDemographics = {
   ],
 };
 
-// Define audience geo data
 export const audienceGeoData = {
   "24h": [
     { name: "North America", value: 520 },
@@ -351,7 +347,6 @@ export const audienceGeoData = {
   ],
 };
 
-// Define audience engagement data
 export const audienceEngagementData = {
   "24h": [
     { name: "0-30s", users: 820 },
@@ -383,7 +378,6 @@ export const audienceEngagementData = {
   ],
 };
 
-// Define audience retention data
 export const audienceRetentionData = {
   "24h": [
     { name: "New Visitors", value: 680 },
@@ -403,7 +397,6 @@ export const audienceRetentionData = {
   ],
 };
 
-// Define audience loyalty data (for sessions per user)
 export const audienceLoyaltyData = {
   "24h": [
     { name: "1 session", value: 520 },
@@ -431,7 +424,6 @@ export const audienceLoyaltyData = {
   ],
 };
 
-// Define acquisition sources data
 export const acquisitionSourcesData = {
   "24h": [
     { name: "Organic Search", value: 580 },
@@ -467,7 +459,6 @@ export const acquisitionSourcesData = {
   ],
 };
 
-// Define acquisition campaign performance data
 export const campaignPerformanceData = {
   "24h": [
     {
@@ -623,7 +614,6 @@ export const campaignPerformanceData = {
   ],
 };
 
-// Define acquisition channels over time data
 export const channelsOverTimeData = {
   "24h": [
     {
@@ -779,7 +769,6 @@ export const channelsOverTimeData = {
   ],
 };
 
-// Define acquisition conversion rates data
 export const conversionRatesData = {
   "24h": [
     { name: "Organic Search", rate: 3.2 },
@@ -815,7 +804,6 @@ export const conversionRatesData = {
   ],
 };
 
-// Define landing page performance data
 export const landingPageData = {
   "24h": [
     {
@@ -964,6 +952,167 @@ export const landingPageData = {
       convRate: "2.7%",
       avgTime: "1:42",
     },
+  ],
+};
+
+export const pageViewsData = {
+  "24h": [
+    { name: "12am", views: 1420 },
+    { name: "6am", views: 980 },
+    { name: "12pm", views: 2840 },
+    { name: "6pm", views: 3620 },
+  ],
+  "7d": [
+    { name: "Mon", views: 5420 },
+    { name: "Tue", views: 4980 },
+    { name: "Wed", views: 6240 },
+    { name: "Thu", views: 5890 },
+    { name: "Fri", views: 7120 },
+    { name: "Sat", views: 8340 },
+    { name: "Sun", views: 6780 },
+  ],
+  "30d": [
+    { name: "Week 1", views: 42800 },
+    { name: "Week 2", views: 46300 },
+    { name: "Week 3", views: 49700 },
+    { name: "Week 4", views: 52100 },
+  ],
+  "90d": [
+    { name: "Jan", views: 148600 },
+    { name: "Feb", views: 162300 },
+    { name: "Mar", views: 175800 },
+  ],
+};
+
+export const eventTrackingData = {
+  "24h": [
+    { name: "Button Click", count: 843, users: 562, perUser: 1.5 },
+    { name: "Form Submit", count: 412, users: 385, perUser: 1.1 },
+    { name: "Video Play", count: 368, users: 276, perUser: 1.3 },
+    { name: "Download", count: 215, users: 198, perUser: 1.1 },
+    { name: "Share", count: 127, users: 94, perUser: 1.4 },
+  ],
+  "7d": [
+    { name: "Button Click", count: 5246, users: 3218, perUser: 1.6 },
+    { name: "Form Submit", count: 2853, users: 2567, perUser: 1.1 },
+    { name: "Video Play", count: 2412, users: 1756, perUser: 1.4 },
+    { name: "Download", count: 1532, users: 1324, perUser: 1.2 },
+    { name: "Share", count: 926, users: 641, perUser: 1.4 },
+  ],
+  "30d": [
+    { name: "Button Click", count: 18742, users: 10582, perUser: 1.8 },
+    { name: "Form Submit", count: 10256, users: 8924, perUser: 1.1 },
+    { name: "Video Play", count: 9125, users: 6218, perUser: 1.5 },
+    { name: "Download", count: 5843, users: 4726, perUser: 1.2 },
+    { name: "Share", count: 3642, users: 2418, perUser: 1.5 },
+  ],
+  "90d": [
+    { name: "Button Click", count: 54825, users: 28764, perUser: 1.9 },
+    { name: "Form Submit", count: 28945, users: 24568, perUser: 1.2 },
+    { name: "Video Play", count: 26418, users: 17352, perUser: 1.5 },
+    { name: "Download", count: 16752, users: 13216, perUser: 1.3 },
+    { name: "Share", count: 10542, users: 6845, perUser: 1.5 },
+  ],
+};
+
+export const userFlowData = {
+  "24h": [
+    { source: "Home", target: "Product", value: 342 },
+    { source: "Home", target: "Blog", value: 218 },
+    { source: "Home", target: "About", value: 142 },
+    { source: "Product", target: "Pricing", value: 186 },
+    { source: "Product", target: "Cart", value: 82 },
+    { source: "Blog", target: "Product", value: 54 },
+    { source: "About", target: "Contact", value: 38 },
+  ],
+  "7d": [
+    { source: "Home", target: "Product", value: 2108 },
+    { source: "Home", target: "Blog", value: 1524 },
+    { source: "Home", target: "About", value: 918 },
+    { source: "Product", target: "Pricing", value: 1276 },
+    { source: "Product", target: "Cart", value: 542 },
+    { source: "Blog", target: "Product", value: 364 },
+    { source: "About", target: "Contact", value: 245 },
+  ],
+  "30d": [
+    { source: "Home", target: "Product", value: 7642 },
+    { source: "Home", target: "Blog", value: 5218 },
+    { source: "Home", target: "About", value: 3476 },
+    { source: "Product", target: "Pricing", value: 4218 },
+    { source: "Product", target: "Cart", value: 1865 },
+    { source: "Blog", target: "Product", value: 1352 },
+    { source: "About", target: "Contact", value: 842 },
+  ],
+  "90d": [
+    { source: "Home", target: "Product", value: 22856 },
+    { source: "Home", target: "Blog", value: 15627 },
+    { source: "Home", target: "About", value: 10382 },
+    { source: "Product", target: "Pricing", value: 12624 },
+    { source: "Product", target: "Cart", value: 5428 },
+    { source: "Blog", target: "Product", value: 4257 },
+    { source: "About", target: "Contact", value: 2654 },
+  ],
+};
+
+export const sessionDurationData = {
+  "24h": [
+    { name: "0-30s", users: 624 },
+    { name: "30s-2m", users: 428 },
+    { name: "2m-5m", users: 316 },
+    { name: "5m-15m", users: 196 },
+    { name: "15m+", users: 98 },
+  ],
+  "7d": [
+    { name: "0-30s", users: 3845 },
+    { name: "30s-2m", users: 2672 },
+    { name: "2m-5m", users: 1954 },
+    { name: "5m-15m", users: 1238 },
+    { name: "15m+", users: 642 },
+  ],
+  "30d": [
+    { name: "0-30s", users: 13682 },
+    { name: "30s-2m", users: 9534 },
+    { name: "2m-5m", users: 6875 },
+    { name: "5m-15m", users: 4327 },
+    { name: "15m+", users: 2218 },
+  ],
+  "90d": [
+    { name: "0-30s", users: 39724 },
+    { name: "30s-2m", users: 27648 },
+    { name: "2m-5m", users: 19842 },
+    { name: "5m-15m", users: 12536 },
+    { name: "15m+", users: 6485 },
+  ],
+};
+
+export const exitPagesData = {
+  "24h": [
+    { page: "/checkout/success", exits: 126, exitRate: "82%" },
+    { page: "/contact", exits: 84, exitRate: "45%" },
+    { page: "/product/detail", exits: 62, exitRate: "28%" },
+    { page: "/blog/article", exits: 56, exitRate: "38%" },
+    { page: "/home", exits: 48, exitRate: "12%" },
+  ],
+  "7d": [
+    { page: "/checkout/success", exits: 842, exitRate: "85%" },
+    { page: "/contact", exits: 524, exitRate: "48%" },
+    { page: "/product/detail", exits: 418, exitRate: "32%" },
+    { page: "/blog/article", exits: 356, exitRate: "42%" },
+    { page: "/home", exits: 284, exitRate: "15%" },
+  ],
+  "30d": [
+    { page: "/checkout/success", exits: 2968, exitRate: "87%" },
+    { page: "/contact", exits: 1856, exitRate: "52%" },
+    { page: "/product/detail", exits: 1542, exitRate: "35%" },
+    { page: "/blog/article", exits: 1238, exitRate: "46%" },
+    { page: "/home", exits: 985, exitRate: "18%" },
+  ],
+  "90d": [
+    { page: "/checkout/success", exits: 8943, exitRate: "89%" },
+    { page: "/contact", exits: 5682, exitRate: "55%" },
+    { page: "/product/detail", exits: 4725, exitRate: "38%" },
+    { page: "/blog/article", exits: 3842, exitRate: "49%" },
+    { page: "/home", exits: 2954, exitRate: "21%" },
   ],
 };
 

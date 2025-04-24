@@ -9,12 +9,12 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { timeRangeData } from "../../data/dashboardData";
+import { timeRangeData } from "../../../data/dashboardData";
 import {
   getTooltipStyles,
   getGridColor,
   getAxisColor,
-} from "../../utils/darkModeUtils";
+} from "../../../utils/darkModeUtils";
 
 export default function PerformanceChart({ timeRange, darkMode }) {
   const tooltipStyles = getTooltipStyles(darkMode);

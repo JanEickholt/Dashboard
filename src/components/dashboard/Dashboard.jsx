@@ -2,10 +2,6 @@ import { useState, useEffect } from "react";
 import DashboardHeader from "./DashboardHeader";
 import KPICards from "./KPICards";
 import NavigationTabs from "./NavigationTabs";
-import PerformanceChart from "./PerformanceChart";
-import DeviceDistribution from "./DeviceDistribution";
-import AcquisitionChannels from "./AcquisitionChannels";
-import TopPerformingContent from "./TopPerformingContent";
 import FilterSection from "./FilterSection";
 import NotificationsDropdown from "./dropdowns/NotificationsDropdown";
 import SettingsDropdown from "./dropdowns/SettingsDropdown";
@@ -13,6 +9,8 @@ import UserMenu from "./dropdowns/UserMenu";
 import FilterPanel from "./dropdowns/FilterPanel";
 import Audience from "./audience/Audience";
 import Acquisition from "./acquisition/Acquisition";
+import Overview from "./overview/Overview";
+import Behavior from "./behavior/Behavior";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -88,19 +86,7 @@ export default function Dashboard() {
       <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       {/* Render different content based on active tab */}
       {activeTab === "overview" && (
-        <>
-          {/* Main charts grid - Overview content */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-            <PerformanceChart timeRange={timeRange} darkMode={darkMode} />
-            <DeviceDistribution timeRange={timeRange} darkMode={darkMode} />
-          </div>
-
-          {/* Bottom row charts - Overview content */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <AcquisitionChannels timeRange={timeRange} darkMode={darkMode} />
-            <TopPerformingContent timeRange={timeRange} />
-          </div>
-        </>
+        <Overview timeRange={timeRange} darkMode={darkMode} />
       )}
       {/* Audience tab content */}
       {activeTab === "audience" && (
@@ -110,17 +96,10 @@ export default function Dashboard() {
       {activeTab === "acquisition" && (
         <Acquisition timeRange={timeRange} darkMode={darkMode} />
       )}
-      {/* Placeholder for other tabs */}
       {activeTab === "behavior" && (
-        <div className="p-6 bg-white dark:bg-dark rounded-xl shadow-sm">
-          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">
-            Behavior Tab
-          </h2>
-          <p className="text-slate-600 dark:text-slate-300">
-            Behavior content will be displayed here.
-          </p>
-        </div>
+        <Behavior timeRange={timeRange} darkMode={darkMode} />
       )}
+      {/* Placeholder for other tabs */}
       {activeTab === "conversions" && (
         <div className="p-6 bg-white dark:bg-dark rounded-xl shadow-sm">
           <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">

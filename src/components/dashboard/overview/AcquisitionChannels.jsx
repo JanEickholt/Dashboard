@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from "recharts";
-import { acquisitionData, COLORS } from "../../data/dashboardData";
-import { getTooltipStyles } from "../../utils/darkModeUtils";
+import { acquisitionData, COLORS } from "../../../data/dashboardData";
+import { getTooltipStyles } from "../../../utils/darkModeUtils";
 
 export default function AcquisitionChannels({ timeRange, darkMode }) {
   const tooltipStyles = getTooltipStyles(darkMode);

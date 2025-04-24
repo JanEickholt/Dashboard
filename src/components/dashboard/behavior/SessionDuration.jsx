@@ -9,48 +9,42 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
-import { deviceData, COLORS } from "../../data/dashboardData";
+import { sessionDurationData, COLORS } from "../../../data/dashboardData";
 import {
   getTooltipStyles,
   getGridColor,
   getAxisColor,
-} from "../../utils/darkModeUtils";
+} from "../../../utils/darkModeUtils";
 
-export default function DeviceDistribution({ timeRange, darkMode }) {
+export default function SessionDuration({ timeRange, darkMode }) {
   const tooltipStyles = getTooltipStyles(darkMode);
 
   return (
     <div className="bg-white dark:bg-dark p-6 rounded-xl shadow-sm border border-slate-100 dark:border-gray-700">
       <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-6">
-        Device Distribution
+        Session Duration
       </h2>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
-          data={deviceData[timeRange]}
-          layout="vertical"
-          margin={{ top: 5, right: 30, left: 50, bottom: 5 }}
+          data={sessionDurationData[timeRange]}
+          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
           <CartesianGrid
             strokeDasharray="3 3"
             stroke={getGridColor(darkMode)}
-            horizontal={false}
           />
-          <XAxis type="number" stroke={getAxisColor(darkMode)} />
-          <YAxis
-            dataKey="name"
-            type="category"
-            stroke={getAxisColor(darkMode)}
-          />
+          <XAxis dataKey="name" stroke={getAxisColor(darkMode)} />
+          <YAxis stroke={getAxisColor(darkMode)} />
           <Tooltip
             contentStyle={tooltipStyles.contentStyle}
             formatter={(value) => {
-              return [value, "Value"];
+              return [value, "Users"];
             }}
             labelStyle={tooltipStyles.labelStyle}
             itemStyle={tooltipStyles.itemStyle}
           />
-          <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-            {deviceData[timeRange].map((_, index) => (
+          <Bar dataKey="users" radius={[4, 4, 0, 0]}>
+            {sessionDurationData[timeRange].map((_, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}
