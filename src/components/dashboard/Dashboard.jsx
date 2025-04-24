@@ -12,6 +12,34 @@ import Audience from "./audience/Audience";
 import Acquisition from "./acquisition/Acquisition";
 import Behavior from "./behavior/Behavior";
 import Conversions from "./conversions/Conversions";
+import ExportIndicator from "./ExportIndicator";
+import { ExportManager } from "../../utils/exportManager";
+
+import {
+  timeRangeData,
+  deviceData,
+  acquisitionData,
+  audienceDemographics,
+  audienceGeoData,
+  audienceEngagementData,
+  audienceRetentionData,
+  audienceLoyaltyData,
+  acquisitionSourcesData,
+  campaignPerformanceData,
+  channelsOverTimeData,
+  conversionRatesData,
+  landingPageData,
+  pageViewsData,
+  eventTrackingData,
+  exitPagesData,
+  sessionDurationData,
+  userFlowData,
+  conversionRateOverTimeData,
+  goalCompletionsData,
+  funnelData,
+  revenueMetricsData,
+  conversionBySourceData,
+} from "../../data/dashboardData";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -48,15 +76,60 @@ export default function Dashboard() {
     }, 250);
   };
 
-  // Function to handle export
-  const handleExport = () => {
-    alert("Exporting data as CSV...");
+  const handleExport = async () => {
+    setIsRefreshing(true);
+
+    try {
+      const dashboardData = {
+        timeRangeData,
+        deviceData,
+        acquisitionData,
+        audienceDemographics,
+        audienceGeoData,
+        audienceEngagementData,
+        audienceRetentionData,
+        audienceLoyaltyData,
+        acquisitionSourcesData,
+        campaignPerformanceData,
+        channelsOverTimeData,
+        conversionRatesData,
+        landingPageData,
+        pageViewsData,
+        eventTrackingData,
+        exitPagesData,
+        sessionDurationData,
+        userFlowData,
+        conversionRateOverTimeData,
+        goalCompletionsData,
+        funnelData,
+        revenueMetricsData,
+        conversionBySourceData,
+      };
+
+      const result = await ExportManager.exportDashboardData(
+        activeTab,
+        timeRange,
+        dashboardData,
+        filterOptions,
+        searchQuery,
+      );
+
+      if (result.success) {
+        alert(result.message);
+      } else {
+        alert(result.message || "No data available to export");
+      }
+    } catch (error) {
+      console.error("Error exporting data:", error);
+      alert("An error occurred while exporting data. Please try again.");
+    } finally {
+      setIsRefreshing(false);
+    }
   };
 
-  // Function to toggle filter panel
   const toggleFilter = () => {
     setFilterOpen(!filterOpen);
-    setActiveDropdown(null); // Close other dropdowns when opening filter
+    setActiveDropdown(null);
   };
 
   // Function to toggle Dropdowns, like settings and profile
@@ -65,23 +138,20 @@ export default function Dashboard() {
       setActiveDropdown(null);
     } else {
       setActiveDropdown(dropdown);
-      setFilterOpen(false); // Close filter panel when opening dropdowns
+      setFilterOpen(false);
     }
   };
 
-  // Function to handle search
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  // Function to apply filters
   const applyFilters = (newFilters) => {
     setFilterOptions(newFilters);
-    // Since dateRange filter affects the whole dashboard, we update timeRange
     if (newFilters.dateRange !== filterOptions.dateRange) {
       setTimeRange(newFilters.dateRange);
     }
-    setFilterOpen(false); // Close filter panel after applying
+    setFilterOpen(false);
   };
 
   return (
