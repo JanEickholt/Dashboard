@@ -17,9 +17,7 @@ export default function Dashboard() {
   const [timeRange, setTimeRange] = useState("7d");
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [timeRangeChanging, setTimeRangeChanging] = useState(false);
-  const [showNotifications, setShowNotifications] = useState(false);
-  const [showSettings, setShowSettings] = useState(false);
-  const [showUserMenu, setShowUserMenu] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const [filterOpen, setFilterOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "true" ? true : false;
@@ -56,40 +54,29 @@ export default function Dashboard() {
     setFilterOpen(!filterOpen);
   };
 
-  // Function to toggle notifications
-  const toggleNotifications = () => {
-    setShowNotifications(!showNotifications);
-  };
-
-  // Function to toggle settings
-  const toggleSettings = () => {
-    setShowSettings(!showSettings);
-  };
-
-  // Function to toggle user menu
-  const toggleUserMenu = () => {
-    setShowUserMenu(!showUserMenu);
+  // Function to toggle Dropdowns, like settings and profile
+  const toggleDropdown = (dropdown) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
   return (
     <div className="bg-slate-50 dark:bg-dark dark:text-white min-h-screen p-6">
       <DashboardHeader
         isRefreshing={isRefreshing}
-        showNotifications={showNotifications}
-        showSettings={showSettings}
+        showNotifications={activeDropdown === "notifications"}
+        showSettings={activeDropdown === "settings"}
         handleRefresh={handleRefresh}
-        toggleNotifications={toggleNotifications}
-        toggleSettings={toggleSettings}
-        toggleUserMenu={toggleUserMenu}
+        toggleNotifications={() => toggleDropdown("notifications")}
+        toggleSettings={() => toggleDropdown("settings")}
+        toggleUserMenu={() => toggleDropdown("user")}
       />
 
       {/* Dropdown menus */}
-      {showNotifications && <NotificationsDropdown />}
-      {showSettings && (
+      {activeDropdown === "notifications" && <NotificationsDropdown />}
+      {activeDropdown === "settings" && (
         <SettingsDropdown darkMode={darkMode} setDarkMode={setDarkMode} />
       )}
-      {showUserMenu && <UserMenu />}
-      {filterOpen && <FilterPanel />}
+      {activeDropdown === "user" && <UserMenu />}
 
       {/* Filters section */}
       <FilterSection
