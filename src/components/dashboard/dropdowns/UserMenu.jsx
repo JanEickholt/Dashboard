@@ -4,7 +4,9 @@ export default function UserMenu() {
   return (
     <div className="absolute top-20 right-4 w-48 bg-white dark:bg-dark dark:border-gray-700 dark:text-white rounded-lg shadow-lg border border-slate-100 z-10">
       <div className="p-3 border-b border-slate-100">
-        <p className="text-sm font-medium text-slate-800">John Doe</p>
+        <p className="text-sm font-medium text-slate-800 dark:text-white">
+          John Doe
+        </p>
         <p className="text-xs text-slate-500">admin@example.com</p>
       </div>
       <ul className="py-2">

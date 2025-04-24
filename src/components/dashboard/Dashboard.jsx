@@ -11,6 +11,7 @@ import NotificationsDropdown from "./dropdowns/NotificationsDropdown";
 import SettingsDropdown from "./dropdowns/SettingsDropdown";
 import UserMenu from "./dropdowns/UserMenu";
 import FilterPanel from "./dropdowns/FilterPanel";
+import Audience from "./audience/Audience";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -70,38 +71,73 @@ export default function Dashboard() {
         toggleSettings={() => toggleDropdown("settings")}
         toggleUserMenu={() => toggleDropdown("user")}
       />
-
       {/* Dropdown menus */}
       {activeDropdown === "notifications" && <NotificationsDropdown />}
       {activeDropdown === "settings" && (
         <SettingsDropdown darkMode={darkMode} setDarkMode={setDarkMode} />
       )}
       {activeDropdown === "user" && <UserMenu />}
-
       {/* Filters section */}
       <FilterSection
         timeRange={timeRange}
         setTimeRange={setTimeRange}
         setTimeRangeChanging={setTimeRangeChanging}
       />
-
       {/* KPI summary cards */}
       <KPICards timeRange={timeRange} />
-
       {/* Navigation tabs */}
       <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      {/* Render different content based on active tab */}
+      {activeTab === "overview" && (
+        <>
+          {/* Main charts grid - Overview content */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <PerformanceChart timeRange={timeRange} darkMode={darkMode} />
+            <DeviceDistribution timeRange={timeRange} darkMode={darkMode} />
+          </div>
 
-      {/* Main charts grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-        <PerformanceChart timeRange={timeRange} darkMode={darkMode} />
-        <DeviceDistribution timeRange={timeRange} darkMode={darkMode} />
-      </div>
-
-      {/* Bottom row charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <AcquisitionChannels timeRange={timeRange} darkMode={darkMode} />
-        <TopPerformingContent timeRange={timeRange} />
-      </div>
+          {/* Bottom row charts - Overview content */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <AcquisitionChannels timeRange={timeRange} darkMode={darkMode} />
+            <TopPerformingContent timeRange={timeRange} />
+          </div>
+        </>
+      )}
+      {/* Audience tab content */}
+      {activeTab === "audience" && (
+        <Audience timeRange={timeRange} darkMode={darkMode} />
+      )}
+      {/* Placeholder for other tabs */}
+      {activeTab === "acquisition" && (
+        <div className="p-6 bg-white dark:bg-dark rounded-xl shadow-sm">
+          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">
+            Acquisition Tab
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300">
+            Acquisition content will be displayed here.
+          </p>
+        </div>
+      )}
+      {activeTab === "behavior" && (
+        <div className="p-6 bg-white dark:bg-dark rounded-xl shadow-sm">
+          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">
+            Behavior Tab
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300">
+            Behavior content will be displayed here.
+          </p>
+        </div>
+      )}
+      {activeTab === "conversions" && (
+        <div className="p-6 bg-white dark:bg-dark rounded-xl shadow-sm">
+          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">
+            Conversions Tab
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300">
+            Conversions content will be displayed here.
+          </p>
+        </div>
+      )}{" "}
     </div>
   );
 }

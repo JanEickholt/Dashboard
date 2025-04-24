@@ -283,4 +283,152 @@ export const topPerformingData = {
   ],
 };
 
+// Define audience demographics data
+export const audienceDemographics = {
+  "24h": [
+    { name: "18-24", value: 280 },
+    { name: "25-34", value: 420 },
+    { name: "35-44", value: 350 },
+    { name: "45-54", value: 220 },
+    { name: "55+", value: 130 },
+  ],
+  "7d": [
+    { name: "18-24", value: 1200 },
+    { name: "25-34", value: 2100 },
+    { name: "35-44", value: 1700 },
+    { name: "45-54", value: 1050 },
+    { name: "55+", value: 650 },
+  ],
+  "30d": [
+    { name: "18-24", value: 4800 },
+    { name: "25-34", value: 7200 },
+    { name: "35-44", value: 5500 },
+    { name: "45-54", value: 3800 },
+    { name: "55+", value: 2200 },
+  ],
+  "90d": [
+    { name: "18-24", value: 15200 },
+    { name: "25-34", value: 22400 },
+    { name: "35-44", value: 18100 },
+    { name: "45-54", value: 12600 },
+    { name: "55+", value: 9200 },
+  ],
+};
+
+// Define audience geo data
+export const audienceGeoData = {
+  "24h": [
+    { name: "North America", value: 520 },
+    { name: "Europe", value: 380 },
+    { name: "Asia", value: 290 },
+    { name: "South America", value: 110 },
+    { name: "Africa", value: 70 },
+    { name: "Oceania", value: 30 },
+  ],
+  "7d": [
+    { name: "North America", value: 2400 },
+    { name: "Europe", value: 1800 },
+    { name: "Asia", value: 1500 },
+    { name: "South America", value: 580 },
+    { name: "Africa", value: 320 },
+    { name: "Oceania", value: 180 },
+  ],
+  "30d": [
+    { name: "North America", value: 8500 },
+    { name: "Europe", value: 6200 },
+    { name: "Asia", value: 5400 },
+    { name: "South America", value: 2100 },
+    { name: "Africa", value: 1200 },
+    { name: "Oceania", value: 820 },
+  ],
+  "90d": [
+    { name: "North America", value: 24800 },
+    { name: "Europe", value: 18900 },
+    { name: "Asia", value: 16500 },
+    { name: "South America", value: 6500 },
+    { name: "Africa", value: 4200 },
+    { name: "Oceania", value: 2600 },
+  ],
+};
+
+// Define audience engagement data
+export const audienceEngagementData = {
+  "24h": [
+    { name: "0-30s", users: 820 },
+    { name: "30s-2m", users: 650 },
+    { name: "2m-5m", users: 420 },
+    { name: "5m-15m", users: 280 },
+    { name: "15m+", users: 130 },
+  ],
+  "7d": [
+    { name: "0-30s", users: 3800 },
+    { name: "30s-2m", users: 2900 },
+    { name: "2m-5m", users: 2100 },
+    { name: "5m-15m", users: 1450 },
+    { name: "15m+", users: 850 },
+  ],
+  "30d": [
+    { name: "0-30s", users: 12500 },
+    { name: "30s-2m", users: 9800 },
+    { name: "2m-5m", users: 7200 },
+    { name: "5m-15m", users: 4800 },
+    { name: "15m+", users: 2900 },
+  ],
+  "90d": [
+    { name: "0-30s", users: 35600 },
+    { name: "30s-2m", users: 28400 },
+    { name: "2m-5m", users: 21200 },
+    { name: "5m-15m", users: 14600 },
+    { name: "15m+", users: 9500 },
+  ],
+};
+
+// Define audience retention data
+export const audienceRetentionData = {
+  "24h": [
+    { name: "New Visitors", value: 680 },
+    { name: "Returning", value: 420 },
+  ],
+  "7d": [
+    { name: "New Visitors", value: 3200 },
+    { name: "Returning", value: 1800 },
+  ],
+  "30d": [
+    { name: "New Visitors", value: 9600 },
+    { name: "Returning", value: 6400 },
+  ],
+  "90d": [
+    { name: "New Visitors", value: 28200 },
+    { name: "Returning", value: 19800 },
+  ],
+};
+
+// Define audience loyalty data (for sessions per user)
+export const audienceLoyaltyData = {
+  "24h": [
+    { name: "1 session", value: 520 },
+    { name: "2 sessions", value: 320 },
+    { name: "3 sessions", value: 180 },
+    { name: "4+ sessions", value: 80 },
+  ],
+  "7d": [
+    { name: "1 session", value: 2100 },
+    { name: "2 sessions", value: 1400 },
+    { name: "3 sessions", value: 820 },
+    { name: "4+ sessions", value: 480 },
+  ],
+  "30d": [
+    { name: "1 session", value: 6800 },
+    { name: "2 sessions", value: 4500 },
+    { name: "3 sessions", value: 2900 },
+    { name: "4+ sessions", value: 1800 },
+  ],
+  "90d": [
+    { name: "1 session", value: 18500 },
+    { name: "2 sessions", value: 13600 },
+    { name: "3 sessions", value: 9200 },
+    { name: "4+ sessions", value: 6700 },
+  ],
+};
+
 export const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
