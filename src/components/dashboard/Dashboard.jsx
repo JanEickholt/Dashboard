@@ -7,10 +7,11 @@ import NotificationsDropdown from "./dropdowns/NotificationsDropdown";
 import SettingsDropdown from "./dropdowns/SettingsDropdown";
 import UserMenu from "./dropdowns/UserMenu";
 import FilterPanel from "./dropdowns/FilterPanel";
+import Overview from "./overview/Overview";
 import Audience from "./audience/Audience";
 import Acquisition from "./acquisition/Acquisition";
-import Overview from "./overview/Overview";
 import Behavior from "./behavior/Behavior";
+import Conversions from "./conversions/Conversions";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -96,20 +97,14 @@ export default function Dashboard() {
       {activeTab === "acquisition" && (
         <Acquisition timeRange={timeRange} darkMode={darkMode} />
       )}
+      {/* Behavior tab content */}
       {activeTab === "behavior" && (
         <Behavior timeRange={timeRange} darkMode={darkMode} />
       )}
-      {/* Placeholder for other tabs */}
+      {/* Conversions tab content */}
       {activeTab === "conversions" && (
-        <div className="p-6 bg-white dark:bg-dark rounded-xl shadow-sm">
-          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">
-            Conversions Tab
-          </h2>
-          <p className="text-slate-600 dark:text-slate-300">
-            Conversions content will be displayed here.
-          </p>
-        </div>
-      )}{" "}
+        <Conversions timeRange={timeRange} darkMode={darkMode} />
+      )}
     </div>
   );
 }

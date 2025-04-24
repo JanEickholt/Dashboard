@@ -1116,4 +1116,153 @@ export const exitPagesData = {
   ],
 };
 
+export const conversionRateOverTimeData = {
+  "24h": [
+    { name: "12am", rate: 2.4 },
+    { name: "6am", rate: 2.1 },
+    { name: "12pm", rate: 3.5 },
+    { name: "6pm", rate: 4.2 },
+  ],
+  "7d": [
+    { name: "Mon", rate: 3.2 },
+    { name: "Tue", rate: 3.5 },
+    { name: "Wed", rate: 3.1 },
+    { name: "Thu", rate: 3.8 },
+    { name: "Fri", rate: 4.1 },
+    { name: "Sat", rate: 3.6 },
+    { name: "Sun", rate: 3.3 },
+  ],
+  "30d": [
+    { name: "Week 1", rate: 3.2 },
+    { name: "Week 2", rate: 3.5 },
+    { name: "Week 3", rate: 3.8 },
+    { name: "Week 4", rate: 4.1 },
+  ],
+  "90d": [
+    { name: "Jan", rate: 3.4 },
+    { name: "Feb", rate: 3.7 },
+    { name: "Mar", rate: 4.2 },
+  ],
+};
+
+export const goalCompletionsData = {
+  "24h": [
+    { name: "Purchase", value: 124 },
+    { name: "Signup", value: 245 },
+    { name: "Download", value: 187 },
+    { name: "Contact", value: 98 },
+  ],
+  "7d": [
+    { name: "Purchase", value: 842 },
+    { name: "Signup", value: 1540 },
+    { name: "Download", value: 1120 },
+    { name: "Contact", value: 650 },
+  ],
+  "30d": [
+    { name: "Purchase", value: 3250 },
+    { name: "Signup", value: 5840 },
+    { name: "Download", value: 4380 },
+    { name: "Contact", value: 2420 },
+  ],
+  "90d": [
+    { name: "Purchase", value: 9850 },
+    { name: "Signup", value: 17520 },
+    { name: "Download", value: 13140 },
+    { name: "Contact", value: 7260 },
+  ],
+};
+
+export const funnelData = {
+  "24h": [
+    { name: "Visitors", value: 2400 },
+    { name: "Product Views", value: 1450 },
+    { name: "Add to Cart", value: 620 },
+    { name: "Checkout", value: 320 },
+    { name: "Purchase", value: 124 },
+  ],
+  "7d": [
+    { name: "Visitors", value: 14500 },
+    { name: "Product Views", value: 8700 },
+    { name: "Add to Cart", value: 3740 },
+    { name: "Checkout", value: 1920 },
+    { name: "Purchase", value: 842 },
+  ],
+  "30d": [
+    { name: "Visitors", value: 54200 },
+    { name: "Product Views", value: 32500 },
+    { name: "Add to Cart", value: 14100 },
+    { name: "Checkout", value: 7300 },
+    { name: "Purchase", value: 3250 },
+  ],
+  "90d": [
+    { name: "Visitors", value: 162600 },
+    { name: "Product Views", value: 97500 },
+    { name: "Add to Cart", value: 42300 },
+    { name: "Checkout", value: 21900 },
+    { name: "Purchase", value: 9850 },
+  ],
+};
+
+export const revenueMetricsData = {
+  "24h": [
+    { metric: "Total Revenue", value: "$5,842" },
+    { metric: "Avg Order Value", value: "$47.12" },
+    { metric: "Revenue Per User", value: "$2.43" },
+    { metric: "Revenue Per Visit", value: "$1.63" },
+  ],
+  "7d": [
+    { metric: "Total Revenue", value: "$42,740" },
+    { metric: "Avg Order Value", value: "$50.76" },
+    { metric: "Revenue Per User", value: "$2.95" },
+    { metric: "Revenue Per Visit", value: "$1.87" },
+  ],
+  "30d": [
+    { metric: "Total Revenue", value: "$168,250" },
+    { metric: "Avg Order Value", value: "$51.77" },
+    { metric: "Revenue Per User", value: "$3.07" },
+    { metric: "Revenue Per Visit", value: "$1.94" },
+  ],
+  "90d": [
+    { metric: "Total Revenue", value: "$512,650" },
+    { metric: "Avg Order Value", value: "$52.05" },
+    { metric: "Revenue Per User", value: "$3.21" },
+    { metric: "Revenue Per Visit", value: "$2.08" },
+  ],
+};
+
+export const conversionBySourceData = {
+  "24h": [
+    { name: "Organic Search", value: 3.2 },
+    { name: "Direct", value: 4.1 },
+    { name: "Referral", value: 5.3 },
+    { name: "Social Media", value: 2.8 },
+    { name: "Email", value: 6.4 },
+    { name: "Paid Search", value: 3.9 },
+  ],
+  "7d": [
+    { name: "Organic Search", value: 3.4 },
+    { name: "Direct", value: 4.3 },
+    { name: "Referral", value: 5.5 },
+    { name: "Social Media", value: 3.0 },
+    { name: "Email", value: 6.6 },
+    { name: "Paid Search", value: 4.1 },
+  ],
+  "30d": [
+    { name: "Organic Search", value: 3.6 },
+    { name: "Direct", value: 4.5 },
+    { name: "Referral", value: 5.7 },
+    { name: "Social Media", value: 3.2 },
+    { name: "Email", value: 6.8 },
+    { name: "Paid Search", value: 4.3 },
+  ],
+  "90d": [
+    { name: "Organic Search", value: 3.8 },
+    { name: "Direct", value: 4.7 },
+    { name: "Referral", value: 5.9 },
+    { name: "Social Media", value: 3.4 },
+    { name: "Email", value: 7.0 },
+    { name: "Paid Search", value: 4.5 },
+  ],
+};
+
 export const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
