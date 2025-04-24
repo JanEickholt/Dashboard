@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SettingsDropdown({ darkMode, setDarkMode }) {
   return (
-    <div className="absolute top-16 right-0 w-80 bg-white dark:bg-dark dark:border-gray-700 rounded-lg shadow-lg border border-slate-100 z-10 p-4">
+    <div className="absolute top-20 right-4 w-80 bg-white dark:bg-dark dark:border-gray-700 rounded-lg shadow-lg border border-slate-100 z-10 p-4">
       {" "}
       <h3 className="text-lg font-bold mb-3 text-slate-800 dark:text-white">
         Settings

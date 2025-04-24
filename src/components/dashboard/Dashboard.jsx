@@ -21,9 +21,9 @@ export default function Dashboard() {
   const [showSettings, setShowSettings] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [filterOpen, setFilterOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("darkMode") === "true",
-  );
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("darkMode") === "true" ? true : false;
+  });
 
   // Apply dark mode class to HTML element
   useEffect(() => {
