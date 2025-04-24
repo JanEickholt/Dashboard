@@ -5,6 +5,11 @@ export default function FilterSection({
   timeRange,
   setTimeRange,
   setTimeRangeChanging,
+  searchQuery,
+  handleSearch,
+  toggleFilter,
+  filterActive,
+  handleExport,
 }) {
   return (
     <div className="flex flex-wrap gap-4 mb-8 items-center">
@@ -15,16 +20,27 @@ export default function FilterSection({
         />
         <input
           type="text"
+          value={searchQuery}
+          onChange={handleSearch}
           className="pl-10 pr-4 py-2 w-full rounded-lg border border-slate-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
           placeholder="Search metrics..."
         />
       </div>
       <div className="flex items-center gap-2">
-        <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-gray-700">
+        <button
+          className={`flex items-center gap-2 px-4 py-2 rounded-lg ${filterActive
+              ? "bg-indigo-100 text-indigo-700 border-indigo-300 dark:bg-indigo-900 dark:text-indigo-300 dark:border-indigo-700"
+              : "bg-white dark:bg-gray-800 border-slate-200 dark:border-gray-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-gray-700"
+            } border`}
+          onClick={toggleFilter}
+        >
           <Filter size={16} />
           <span>Filter</span>
         </button>
-        <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-gray-700">
+        <button
+          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-gray-700"
+          onClick={handleExport}
+        >
           <Download size={16} />
           <span>Export</span>
         </button>

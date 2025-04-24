@@ -20,6 +20,11 @@ export default function Dashboard() {
   const [timeRangeChanging, setTimeRangeChanging] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [filterOpen, setFilterOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filterOptions, setFilterOptions] = useState({
+    dateRange: "7d",
+    metrics: "all",
+  });
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "true" ? true : false;
   });
@@ -51,11 +56,32 @@ export default function Dashboard() {
   // Function to toggle filter panel
   const toggleFilter = () => {
     setFilterOpen(!filterOpen);
+    setActiveDropdown(null); // Close other dropdowns when opening filter
   };
 
   // Function to toggle Dropdowns, like settings and profile
   const toggleDropdown = (dropdown) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+    if (dropdown === activeDropdown) {
+      setActiveDropdown(null);
+    } else {
+      setActiveDropdown(dropdown);
+      setFilterOpen(false); // Close filter panel when opening dropdowns
+    }
+  };
+
+  // Function to handle search
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Function to apply filters
+  const applyFilters = (newFilters) => {
+    setFilterOptions(newFilters);
+    // Since dateRange filter affects the whole dashboard, we update timeRange
+    if (newFilters.dateRange !== filterOptions.dateRange) {
+      setTimeRange(newFilters.dateRange);
+    }
+    setFilterOpen(false); // Close filter panel after applying
   };
 
   return (
@@ -75,11 +101,26 @@ export default function Dashboard() {
         <SettingsDropdown darkMode={darkMode} setDarkMode={setDarkMode} />
       )}
       {activeDropdown === "user" && <UserMenu />}
+      {/* Filter panel */}
+      {filterOpen && (
+        <div className="absolute z-10 left-6 right-6 mt-2">
+          <FilterPanel
+            currentFilters={filterOptions}
+            applyFilters={applyFilters}
+            onClose={() => setFilterOpen(false)}
+          />
+        </div>
+      )}
       {/* Filters section */}
       <FilterSection
         timeRange={timeRange}
         setTimeRange={setTimeRange}
         setTimeRangeChanging={setTimeRangeChanging}
+        searchQuery={searchQuery}
+        handleSearch={handleSearch}
+        toggleFilter={toggleFilter}
+        filterActive={filterOpen}
+        handleExport={handleExport}
       />
       {/* KPI summary cards */}
       <KPICards timeRange={timeRange} />
@@ -87,23 +128,48 @@ export default function Dashboard() {
       <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       {/* Render different content based on active tab */}
       {activeTab === "overview" && (
-        <Overview timeRange={timeRange} darkMode={darkMode} />
+        <Overview
+          timeRange={timeRange}
+          darkMode={darkMode}
+          searchQuery={searchQuery}
+          filterOptions={filterOptions}
+        />
       )}
       {/* Audience tab content */}
       {activeTab === "audience" && (
-        <Audience timeRange={timeRange} darkMode={darkMode} />
+        <Audience
+          timeRange={timeRange}
+          darkMode={darkMode}
+          searchQuery={searchQuery}
+          filterOptions={filterOptions}
+        />
       )}
       {/* Acquisition tab content */}
       {activeTab === "acquisition" && (
-        <Acquisition timeRange={timeRange} darkMode={darkMode} />
+        <Acquisition
+          timeRange={timeRange}
+          darkMode={darkMode}
+          searchQuery={searchQuery}
+          filterOptions={filterOptions}
+        />
       )}
       {/* Behavior tab content */}
       {activeTab === "behavior" && (
-        <Behavior timeRange={timeRange} darkMode={darkMode} />
+        <Behavior
+          timeRange={timeRange}
+          darkMode={darkMode}
+          searchQuery={searchQuery}
+          filterOptions={filterOptions}
+        />
       )}
       {/* Conversions tab content */}
       {activeTab === "conversions" && (
-        <Conversions timeRange={timeRange} darkMode={darkMode} />
+        <Conversions
+          timeRange={timeRange}
+          darkMode={darkMode}
+          searchQuery={searchQuery}
+          filterOptions={filterOptions}
+        />
       )}
     </div>
   );
