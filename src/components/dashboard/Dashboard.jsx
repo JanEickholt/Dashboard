@@ -12,6 +12,7 @@ import SettingsDropdown from "./dropdowns/SettingsDropdown";
 import UserMenu from "./dropdowns/UserMenu";
 import FilterPanel from "./dropdowns/FilterPanel";
 import Audience from "./audience/Audience";
+import Acquisition from "./acquisition/Acquisition";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -37,17 +38,15 @@ export default function Dashboard() {
   // Function to handle data refresh
   const handleRefresh = () => {
     setIsRefreshing(true);
-    // Simulate API call
     setTimeout(() => {
       setIsRefreshing(false);
       alert("Data refreshed successfully!");
-    }, 1000);
+    }, 250);
   };
 
   // Function to handle export
   const handleExport = () => {
     alert("Exporting data as CSV...");
-    // In a real app, this would trigger a file download
   };
 
   // Function to toggle filter panel
@@ -107,17 +106,11 @@ export default function Dashboard() {
       {activeTab === "audience" && (
         <Audience timeRange={timeRange} darkMode={darkMode} />
       )}
-      {/* Placeholder for other tabs */}
+      {/* Acquisition tab content */}
       {activeTab === "acquisition" && (
-        <div className="p-6 bg-white dark:bg-dark rounded-xl shadow-sm">
-          <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">
-            Acquisition Tab
-          </h2>
-          <p className="text-slate-600 dark:text-slate-300">
-            Acquisition content will be displayed here.
-          </p>
-        </div>
+        <Acquisition timeRange={timeRange} darkMode={darkMode} />
       )}
+      {/* Placeholder for other tabs */}
       {activeTab === "behavior" && (
         <div className="p-6 bg-white dark:bg-dark rounded-xl shadow-sm">
           <h2 className="text-xl font-bold text-slate-800 dark:text-white mb-4">
