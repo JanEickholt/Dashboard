@@ -321,7 +321,7 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                         />
                         <button
                           type="button"
-                          className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                          className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 dark:bg-gray-800"
                         >
                           Change
                         </button>
@@ -346,11 +346,10 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                       </div>
                       <button
                         type="button"
-                        className={`w-12 h-6 rounded-full transition-colors ${
-                          accountSettings.twoFactorAuth
+                        className={`w-12 h-6 rounded-full transition-colors ${accountSettings.twoFactorAuth
                             ? "bg-indigo-600"
                             : "bg-slate-200 dark:bg-gray-600"
-                        } relative`}
+                          } relative`}
                         onClick={() =>
                           setAccountSettings({
                             ...accountSettings,
@@ -359,9 +358,8 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                         }
                       >
                         <span
-                          className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                            accountSettings.twoFactorAuth ? "left-7" : "left-1"
-                          }`}
+                          className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${accountSettings.twoFactorAuth ? "left-7" : "left-1"
+                            }`}
                         ></span>
                       </button>
                     </div>
@@ -465,19 +463,17 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    notificationSettings.emailNotifications
+                  className={`w-12 h-6 rounded-full transition-colors ${notificationSettings.emailNotifications
                       ? "bg-indigo-600"
                       : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                    } relative`}
                   onClick={() => handleNotificationToggle("emailNotifications")}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      notificationSettings.emailNotifications
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${notificationSettings.emailNotifications
                         ? "left-7"
                         : "left-1"
-                    }`}
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -493,19 +489,17 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    notificationSettings.dashboardUpdates
+                  className={`w-12 h-6 rounded-full transition-colors ${notificationSettings.dashboardUpdates
                       ? "bg-indigo-600"
                       : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                    } relative`}
                   onClick={() => handleNotificationToggle("dashboardUpdates")}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      notificationSettings.dashboardUpdates
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${notificationSettings.dashboardUpdates
                         ? "left-7"
                         : "left-1"
-                    }`}
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -521,17 +515,15 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    notificationSettings.securityAlerts
+                  className={`w-12 h-6 rounded-full transition-colors ${notificationSettings.securityAlerts
                       ? "bg-indigo-600"
                       : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                    } relative`}
                   onClick={() => handleNotificationToggle("securityAlerts")}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      notificationSettings.securityAlerts ? "left-7" : "left-1"
-                    }`}
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${notificationSettings.securityAlerts ? "left-7" : "left-1"
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -547,17 +539,15 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    notificationSettings.marketingEmails
+                  className={`w-12 h-6 rounded-full transition-colors ${notificationSettings.marketingEmails
                       ? "bg-indigo-600"
                       : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                    } relative`}
                   onClick={() => handleNotificationToggle("marketingEmails")}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      notificationSettings.marketingEmails ? "left-7" : "left-1"
-                    }`}
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${notificationSettings.marketingEmails ? "left-7" : "left-1"
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -573,17 +563,15 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    notificationSettings.newFeatures
+                  className={`w-12 h-6 rounded-full transition-colors ${notificationSettings.newFeatures
                       ? "bg-indigo-600"
                       : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                    } relative`}
                   onClick={() => handleNotificationToggle("newFeatures")}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      notificationSettings.newFeatures ? "left-7" : "left-1"
-                    }`}
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${notificationSettings.newFeatures ? "left-7" : "left-1"
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -620,15 +608,13 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    darkMode ? "bg-indigo-600" : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                  className={`w-12 h-6 rounded-full transition-colors ${darkMode ? "bg-indigo-600" : "bg-slate-200 dark:bg-gray-600"
+                    } relative`}
                   onClick={() => setDarkMode(!darkMode)}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      darkMode ? "left-7" : "left-1"
-                    }`}
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${darkMode ? "left-7" : "left-1"
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -660,13 +646,13 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <button className="text-xs p-2 border border-slate-200 dark:border-gray-700 text-slate-700 dark:text-slate-300 rounded-md hover:bg-slate-50 dark:hover:bg-gray-700">
+                  <button className="text-xs p-2 border border-slate-200 dark:border-gray-700 text-slate-700 dark:text-slate-300 rounded-md hover:bg-slate-50 dark:hover:bg-gray-700 dark:bg-gray-800">
                     Small
                   </button>
                   <button className="text-sm p-2 border border-indigo-600 text-indigo-600 dark:text-indigo-400 dark:border-indigo-400 rounded-md bg-indigo-50 dark:bg-indigo-900/20">
                     Medium
                   </button>
-                  <button className="text-base p-2 border border-slate-200 dark:border-gray-700 text-slate-700 dark:text-slate-300 rounded-md hover:bg-slate-50 dark:hover:bg-gray-700">
+                  <button className="text-base p-2 border border-slate-200 dark:border-gray-700 text-slate-700 dark:text-slate-300 rounded-md hover:bg-slate-50 dark:hover:bg-gray-700 dark:bg-gray-800">
                     Large
                   </button>
                 </div>
@@ -704,17 +690,15 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    privacySettings.shareUsageData
+                  className={`w-12 h-6 rounded-full transition-colors ${privacySettings.shareUsageData
                       ? "bg-indigo-600"
                       : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                    } relative`}
                   onClick={() => handlePrivacyToggle("shareUsageData")}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      privacySettings.shareUsageData ? "left-7" : "left-1"
-                    }`}
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${privacySettings.shareUsageData ? "left-7" : "left-1"
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -730,17 +714,15 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    privacySettings.allowCookies
+                  className={`w-12 h-6 rounded-full transition-colors ${privacySettings.allowCookies
                       ? "bg-indigo-600"
                       : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                    } relative`}
                   onClick={() => handlePrivacyToggle("allowCookies")}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      privacySettings.allowCookies ? "left-7" : "left-1"
-                    }`}
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${privacySettings.allowCookies ? "left-7" : "left-1"
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -756,17 +738,15 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 </div>
                 <button
                   type="button"
-                  className={`w-12 h-6 rounded-full transition-colors ${
-                    privacySettings.showOnlineStatus
+                  className={`w-12 h-6 rounded-full transition-colors ${privacySettings.showOnlineStatus
                       ? "bg-indigo-600"
                       : "bg-slate-200 dark:bg-gray-600"
-                  } relative`}
+                    } relative`}
                   onClick={() => handlePrivacyToggle("showOnlineStatus")}
                 >
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${
-                      privacySettings.showOnlineStatus ? "left-7" : "left-1"
-                    }`}
+                    className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${privacySettings.showOnlineStatus ? "left-7" : "left-1"
+                      }`}
                   ></span>
                 </button>
               </div>
@@ -777,13 +757,13 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 Data Management
               </h3>
               <div className="space-y-4">
-                <button className="flex items-center justify-between w-full p-3 border border-slate-200 dark:border-gray-700 rounded-lg hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-slate-300">
+                <button className="flex items-center justify-between w-full p-3 border border-slate-200 dark:border-gray-700 rounded-lg hover:bg-slate-50 dark:hover:bg-gray-700 text-slate-700 dark:text-slate-300 dark:bg-gray-800">
                   <span>Export Personal Data</span>
                   <span className="text-sm text-slate-500 dark:text-slate-400">
                     Download all your data in a CSV format
                   </span>
                 </button>
-                <button className="flex items-center justify-between w-full p-3 border border-red-200 dark:border-red-900 rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20">
+                <button className="flex items-center justify-between w-full p-3 border border-red-200 dark:border-red-900 rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 dark:bg-gray-800">
                   <span>Delete Account</span>
                   <span className="text-sm">
                     Permanently remove your account and all data
@@ -841,11 +821,10 @@ export default function ProfileSettings({ onClose, darkMode, setDarkMode }) {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-3 w-full p-3 rounded-lg transition-colors ${
-                    activeTab === tab.id
+                  className={`flex items-center gap-3 w-full p-3 rounded-lg transition-colors ${activeTab === tab.id
                       ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400 dark:bg-gray-800"
                       : "text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-gray-700 dark:bg-gray-800 dark:bg-gray-800"
-                  }`}
+                    }`}
                 >
                   <tab.icon
                     size={18}
