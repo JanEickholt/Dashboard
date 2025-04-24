@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function SettingsDropdown({ darkMode, setDarkMode }) {
+  const [notificationsEnabled, setNotificationsEnabled] = React.useState(true);
+
   return (
     <div className="absolute top-20 right-4 w-80 bg-white dark:bg-dark dark:border-gray-700 rounded-lg shadow-lg border border-slate-100 z-10 p-4">
       {" "}
@@ -17,8 +19,7 @@ export default function SettingsDropdown({ darkMode, setDarkMode }) {
             onClick={() => setDarkMode(!darkMode)}
           >
             <span
-              className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${darkMode ? "translate-x-[0.25rem]" : "translate-x-[-1.25rem]"
-                }`}
+              className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${darkMode ? "left-7" : "left-1"}`}
             ></span>
           </button>
         </div>
@@ -26,7 +27,14 @@ export default function SettingsDropdown({ darkMode, setDarkMode }) {
           <span className="text-sm font-medium text-slate-800 dark:text-white">
             Notifications
           </span>
-          <button className="w-12 h-6 rounded-full bg-indigo-600"></button>
+          <button
+            className={`w-12 h-6 rounded-full transition-colors ${notificationsEnabled ? "bg-indigo-600" : "bg-slate-200"} relative`}
+            onClick={() => setNotificationsEnabled(!notificationsEnabled)}
+          >
+            <span
+              className={`absolute top-1/2 -translate-y-1/2 w-4 h-4 rounded-full transition-transform bg-white ${notificationsEnabled ? "left-7" : "left-1"}`}
+            ></span>
+          </button>
         </div>
       </div>
     </div>
