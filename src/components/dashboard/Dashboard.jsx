@@ -13,6 +13,8 @@ import Acquisition from "./acquisition/Acquisition";
 import Behavior from "./behavior/Behavior";
 import Conversions from "./conversions/Conversions";
 import ExportIndicator from "./ExportIndicator";
+import ProfileSettings from "./settings/ProfileSettings";
+import ProfileButton from "./profile/ProfileButton";
 import { ExportManager } from "../../utils/exportManager";
 
 import {
@@ -56,6 +58,7 @@ export default function Dashboard() {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("darkMode") === "true" ? true : false;
   });
+  const [showProfileSettings, setShowProfileSettings] = useState(false);
 
   // Apply dark mode class to HTML element
   useEffect(() => {
@@ -154,6 +157,11 @@ export default function Dashboard() {
     setFilterOpen(false);
   };
 
+  const openProfileSettings = () => {
+    setShowProfileSettings(true);
+    setActiveDropdown(null);
+  };
+
   return (
     <div className="bg-slate-50 dark:bg-dark dark:text-white min-h-screen p-6">
       <DashboardHeader
@@ -170,7 +178,17 @@ export default function Dashboard() {
       {activeDropdown === "settings" && (
         <SettingsDropdown darkMode={darkMode} setDarkMode={setDarkMode} />
       )}
-      {activeDropdown === "user" && <UserMenu />}
+      {activeDropdown === "user" && (
+        <UserMenu onProfileClick={openProfileSettings} />
+      )}
+      {/* Profile Settings Modal */}
+      {showProfileSettings && (
+        <ProfileSettings
+          onClose={() => setShowProfileSettings(false)}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+      )}
       {/* Filter panel */}
       {filterOpen && (
         <div className="absolute z-10 left-6 right-6 mt-2">
