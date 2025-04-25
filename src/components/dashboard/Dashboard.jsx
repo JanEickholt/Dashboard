@@ -14,7 +14,6 @@ import Behavior from "./behavior/Behavior";
 import Conversions from "./conversions/Conversions";
 import ExportIndicator from "./ExportIndicator";
 import ProfileSettings from "./settings/ProfileSettings";
-import ProfileButton from "./profile/ProfileButton";
 import { ExportManager } from "../../utils/exportManager";
 
 import {
