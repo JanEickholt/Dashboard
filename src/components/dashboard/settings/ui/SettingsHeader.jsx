@@ -7,7 +7,7 @@ export default function SettingsHeader({ onClose }) {
       <div className="flex items-center gap-2">
         <button
           onClick={onClose}
-          className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-gray-700"
+          className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-gray-700 dark:bg-gray-800"
         >
           <ArrowLeft size={20} className="text-slate-700 dark:text-white" />
         </button>
